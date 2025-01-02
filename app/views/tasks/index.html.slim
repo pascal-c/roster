@@ -1,0 +1,7 @@
+= render partial: '_shared/navigation', locals: { active: @schedule.id }
+
+.content 
+  h3.title.is-4 =@schedule.name
+
+  - for task in @schedule.tasks
+    p =task.datetime.strftime('%d.%m.%Y %H:%M')
